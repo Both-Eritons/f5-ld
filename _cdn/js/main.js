@@ -4,7 +4,7 @@ function accordionClick() {
 	cards.forEach((card) => {
 		card.addEventListener("click", (i) => {
 			card.nextElementSibling.classList.toggle("opened");
-			card.querySelector("i").classList.toggle("fa-angle-down");
+			card.querySelector("img").classList.toggle("card-image");
 		})
 	})
 }

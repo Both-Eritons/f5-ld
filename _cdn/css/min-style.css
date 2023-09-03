@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 *{
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 :root{
 	--principal-color: #3366ff;
@@ -41,19 +49,40 @@ body {
 	height: 95vh;
 	padding: 20px;
 	background-color: white;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: space-evenly;
-	transform: translateX(-100%);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: start;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
+	-webkit-transform: translateX(-100%);
+	    -ms-transform: translateX(-100%);
+	        transform: translateX(-100%);
+	
+	-webkit-transition: 0.2s -webkit-transform;
+	
+	transition: 0.2s -webkit-transform;
+	
+	-o-transition: 0.2s transform;
 	
 	transition: 0.2s transform;
+	
+	transition: 0.2s transform, 0.2s -webkit-transform;
 }
 .navbar .nav-items .home{
 	color: black;
 	font-family: "Poppins", "Montserrat", sans-serif;
 	font-weight: 800;
 	font-size: 2rem;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
 	transition: 0.5s all;
 }
 .navbar .nav-items .home:hover {
@@ -65,13 +94,20 @@ body {
 	position: fixed;
 	top: 15px;
 	right: 15px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	gap: 5px;
 	cursor: pointer;
 }
 .nav-items.clicked {
-	transform: translateX(0%) !important;
+	-webkit-transform: translateX(0%) !important;
+	    -ms-transform: translateX(0%) !important;
+	        transform: translateX(0%) !important;
 }
 
 .button-nav .btn-li{
@@ -81,13 +117,19 @@ body {
 }
 
 .button-nav.clicked .btn-li.one{
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
 }
 .button-nav.clicked .btn-li.two{
-	transform: rotateZ(-45deg);
+	-webkit-transform: rotateZ(-45deg);
+	    -ms-transform: rotate(-45deg);
+	        transform: rotateZ(-45deg);
 }
 .button-nav.clicked .btn-li.three{
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
 }
 .none {
 	display: none;
@@ -99,19 +141,27 @@ body {
 .hr {
   	border: 0; 
   	height: 1px; 
+  	background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255,255, 0.1)), color-stop(#ffff), color-stop(#ffff), to(rgba(255, 255,255, 0.1))); 
+  	background-image: -o-linear-gradient(left, rgba(255, 255,255, 0.1), #ffff, #ffff, rgba(255, 255,255, 0.1)); 
   	background-image: linear-gradient(to right, rgba(255, 255,255, 0.1), #ffff, #ffff, rgba(255, 255,255, 0.1));
 }
 
 .black { 
+  	background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0,0, 0.1)), color-stop(black), color-stop(black), to(rgba(0, 0,0, 0.1))); 
+  	background-image: -o-linear-gradient(left, rgba(0, 0,0, 0.1), black, black, rgba(0, 0,0, 0.1)); 
   	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), black, black, rgba(0, 0,0, 0.1));
 }
 
 .red { 
+  	background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0,0, 0.1)), color-stop(#ff0000), color-stop(#ff0000), to(rgba(0, 0,0, 0.1))); 
+  	background-image: -o-linear-gradient(left, rgba(0, 0,0, 0.1), #ff0000, #ff0000, rgba(0, 0,0, 0.1)); 
   	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), #ff0000, #ff0000, rgba(0, 0,0, 0.1));
 }
 
 
 .blue { 
+  	background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0,0, 0.1)), color-stop(var(--principal-color)), color-stop(var(--principal-color)), to(rgba(0, 0,0, 0.1))); 
+  	background-image: -o-linear-gradient(left, rgba(0, 0,0, 0.1), var(--principal-color), var(--principal-color), rgba(0, 0,0, 0.1)); 
   	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), var(--principal-color), var(--principal-color), rgba(0, 0,0, 0.1));
 }
 
@@ -163,9 +213,15 @@ body {
 
 .button-more {
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	background-color: var(--principal-color);
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
@@ -174,6 +230,8 @@ body {
 	height: 60px;
 	border-radius: 5px;
 	margin-top: 2rem;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
 	transition: 0.5s all;
 }
 .button-more:hover{
@@ -208,10 +266,17 @@ body {
 
 .card-container {
 	margin-bottom: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-evenly;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
 	gap: 15px;
 }
 
@@ -219,7 +284,8 @@ body {
 	margin: auto;
 	width: 200px;
 	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+	        box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
 	padding: 10px 10px 20px 10px;
 }
 
@@ -237,9 +303,10 @@ body {
 	position: absolute;
 	top: 50%;
 	left:  50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 }
-
 
 .card-title{
 	font-family: "Poppins", sans-serif;
@@ -276,8 +343,12 @@ body {
 }
 .ben-li{
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	gap: 20px;
 }
 
@@ -312,22 +383,36 @@ body {
 }
 .plans-container {
 	width:  100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 .plans-card {
 	min-width: 100px;
 	width: 100%;
 	max-width: 400px;
 	margin: 10px auto;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+	        box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
 }
 .plans-click {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	gap: 10px;
 	padding: 10px;
 }
@@ -340,13 +425,6 @@ body {
 }
 .plans-db.opened {
 	display: block !important;
-}
-.plans-click img{
-	width: 16px;
-	height: 16px;
-}
-.plans-click .card-image {
-	content: url('../icons/angle_down.svg');
 }
 .plans-card .title {
 	display: inline-block;
@@ -378,10 +456,19 @@ body {
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: end;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: end;
 }
 .plans-card  .plans-db .plans-db-item {
 	text-align: center;
@@ -421,4 +508,3 @@ body {
 	}
 
 }
-
