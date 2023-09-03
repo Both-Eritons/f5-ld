@@ -1,4 +1,6 @@
-
+*{
+	box-sizing: border-box;
+}
 :root{
 	--principal-color: #3366ff;
 	--second-color:  rgb(139, 170, 255);
@@ -14,6 +16,58 @@ li{
 body {
 	background-color: black;
 }
+.navbar{
+	position: relative;
+}
+.navbar .items{
+	position: fixed;
+	width: 100vw;
+	height: 92vh;
+	padding: 20px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-evenly;
+}
+.navbar .items .home{
+	color: black;
+	font-family: "Poppins", "Montserrat", sans-serif;
+	font-weight: 900;
+	font-size: 2rem;
+	transition: 0.5s all;
+}
+.navbar .items .home:hover {
+	color: var(--principal-color);
+}
+.button-nav {
+	z-index: 999;
+	padding: 5px;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+}
+.button-nav .btn-li{
+	width:  25px;
+	height: 3px;
+	background-color: var(--principal-color);
+}
+.button-nav.clicked {
+	transform: translateX(-50%) translateX(0%);
+}
+.button-nav.clicked .btn-li.one{
+	transform: rotate(45deg);
+}
+.button-nav.clicked .btn-li.two{
+	transform: rotate(160deg);
+}
+.button-nav.clicked .btn-li.three{
+	transform: rotate(45deg);
+}
 .none {
 	display: none;
 }
@@ -26,9 +80,17 @@ body {
   	height: 1px; 
   	background-image: linear-gradient(to right, rgba(255, 255,255, 0.1), #ffff, #ffff, rgba(255, 255,255, 0.1));
 }
-.hr-black {
-  	border: 0; 
-  	height: 1px; 
+
+.black { 
+  	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), black, black, rgba(0, 0,0, 0.1));
+}
+
+.red { 
+  	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), #ff0000, #ff0000, rgba(0, 0,0, 0.1));
+}
+
+
+.blue { 
   	background-image: linear-gradient(to right, rgba(0, 0,0, 0.1), var(--principal-color), var(--principal-color), rgba(0, 0,0, 0.1));
 }
 
@@ -82,19 +144,27 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: var(--principal-color);
-	font-family: "Montserrat";
+	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
 	width:  100%;
 	max-width: 400px;
 	height: 60px;
 	border-radius: 5px;
 	margin-top: 2rem;
-	transition: 0.5s border;
-	transition: 0.5s scale;
+	transition: 0.5s all;
 }
 .button-more:hover{
+	font-weight: 700;
 	scale: 1.1;
 	border-bottom: 2px solid var(--second-color);
+}
+.test{
+	margin: 10px auto;
+	text-align: center;
+}
+.button-test {
+	font-family: "Montserrat", sans-serif;
+	border-bottom: 1px solid var(--principal-color);
 }
 
 /*			SECTION about		*/
@@ -135,8 +205,7 @@ body {
 	background-color: var(--principal-color);
 	width: 100px;
 	height:  100px;
-	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%); clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-	clip-path: polygon(50% 0%, 0% 100%, 100% 100%); clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	
 	position: relative;
 	
 }
@@ -171,7 +240,7 @@ body {
 /*					NEED US					*/
 .section-need {
 	background-color: rgba(30,29,29,255);
-	padding:  20px;
+	padding:  20px 20px 40px 20px;
 }
 
 .section-need .title {
@@ -179,7 +248,7 @@ body {
 	letter-spacing: 1.5px;
 }
 .bene {
-	margin: auto;
+	margin: auto ;
 	max-width: 300px;
 }
 .ben-li{
@@ -201,3 +270,86 @@ body {
 	line-height: 0.9rem;
 	padding:  5px;
 }
+
+/*			PLANOS		*/
+.section-plan {
+	background-color: white;
+	padding:  20px 20px 40px 20px;
+}
+
+.section-plan .title {
+	color: black;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+}
+.plans-container {
+	width:  100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.plans-card {
+	min-width: 100px;
+	width: 100%;
+	max-width: 400px;
+	margin: 10px auto;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
+}
+.plans-click {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 10px;
+}
+.plans-click, .plans-click > * {
+	cursor: pointer;
+	font-family: "Poppins", sans-serif;
+}
+.plans-db.closed {
+	display: none !important;
+}
+.plans-db.opened {
+	display: block !important;
+}
+.plans-card .title {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin: 10px auto;
+}
+.plans-price {
+	margin-top: 20px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	
+}
+.plans-price.reqs {
+	font-family: "Poppins", sans-serif;
+	font-size: 0.8rem;
+}
+.plans-price.price {
+	font-size: 1.2rem;
+	font-family: "Montserrat", sans-serif;
+}
+.plans-card .button-more {
+	border-radius: 0;
+	height: 40px;
+}
+.plans-card .plans-db {
+	font-family: "Montserrat", sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+}
+.plans-card  .plans-db .plans-db-item {
+	text-align: center;
+}
+
