@@ -19,29 +19,33 @@ body {
 .navbar{
 	position: relative;
 }
-.navbar .items{
+.navbar .nav-items{
 	position: fixed;
+	z-index: 999;
 	width: 100vw;
-	height: 92vh;
+	height: 95vh;
 	padding: 20px;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
 	justify-content: space-evenly;
+	transform: translateX(-100%);
+	
+	transition: 0.2s transform;
 }
-.navbar .items .home{
+.navbar .nav-items .home{
 	color: black;
 	font-family: "Poppins", "Montserrat", sans-serif;
 	font-weight: 900;
 	font-size: 2rem;
 	transition: 0.5s all;
 }
-.navbar .items .home:hover {
+.navbar .nav-items .home:hover {
 	color: var(--principal-color);
 }
 .button-nav {
-	z-index: 999;
+	z-index: 1000;
 	padding: 5px;
 	position: fixed;
 	top: 15px;
@@ -51,19 +55,21 @@ body {
 	gap: 5px;
 	cursor: pointer;
 }
+.nav-items.clicked {
+	transform: translateX(0%) !important;
+}
+
 .button-nav .btn-li{
 	width:  25px;
 	height: 3px;
 	background-color: var(--principal-color);
 }
-.button-nav.clicked {
-	transform: translateX(-50%) translateX(0%);
-}
+
 .button-nav.clicked .btn-li.one{
 	transform: rotate(45deg);
 }
 .button-nav.clicked .btn-li.two{
-	transform: rotate(160deg);
+	transform: rotateZ(-45deg);
 }
 .button-nav.clicked .btn-li.three{
 	transform: rotate(45deg);
@@ -197,12 +203,11 @@ body {
 	width: 200px;
 	background-color: white;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
-	padding: 20px 10px;
+	padding: 10px 10px 20px 10px;
 }
 
 .card-con-img {
 	margin:  0 auto;
-	background-color: var(--principal-color);
 	width: 100px;
 	height:  100px;
 	
@@ -353,3 +358,12 @@ body {
 	text-align: center;
 }
 
+/*				FOOTER				*/
+.section-footer {
+	padding: 20px 30px 40px 30px;
+}
+.section-footer .btn {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+}
