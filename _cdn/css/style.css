@@ -396,6 +396,10 @@ body {
 	text-align: center;
 	font-size: 2rem;
 }
+.section-footer img{
+	width: 64px;
+	height: 64px;
+}
 
 
 /*			RESPONSIVIDADES			*/
