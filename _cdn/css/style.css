@@ -78,9 +78,10 @@ body {
 	width:  25px;
 	height: 3px;
 	background-color: var(--principal-color);
+	transition: 0.5s all;
 }
 
-.button-nav.clicked .btn-li.one{
+/*.button-nav.clicked .btn-li.one{
 	transform: rotate(45deg);
 }
 .button-nav.clicked .btn-li.two{
@@ -88,6 +89,16 @@ body {
 }
 .button-nav.clicked .btn-li.three{
 	transform: rotate(45deg);
+}*/
+.button-nav.clicked .btn-li.one{
+	transform: rotate(45deg);
+	display: none;
+}
+.button-nav.clicked .btn-li.two{
+	transform: rotateZ(-45deg);
+}
+.button-nav.clicked .btn-li.three{
+	transform: rotate(45deg) translateY(-5px) translateX(-5px);
 }
 .none {
 	display: none;
