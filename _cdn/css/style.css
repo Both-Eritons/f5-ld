@@ -10,7 +10,7 @@
 */
 @font-face {
 	font-family: "Poppins";
-	src: url("../fonts/Poppins/Poppins-Relugar.ttf") format("truetype");
+	src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
 }
 @font-face {
 	font-family: "Montserrat";
@@ -229,6 +229,8 @@ body {
 .card {
 	margin: auto;
 	width: 200px;
+	height: 390px;
+	border-radius: 10px;
 	background-color: white;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
 	padding: 10px 10px 20px 10px;
@@ -333,6 +335,7 @@ body {
 	width: 100%;
 	max-width: 400px;
 	margin: 10px auto;
+	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px 0px;
 }
 .plans-click {
@@ -382,7 +385,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 }
 .plans-card .button-more {
-	border-radius: 0;
+	border-radius: 0 0 10px 10px;
 	height: 40px;
 }
 .plans-card .plans-db {
@@ -408,10 +411,12 @@ body {
 	font-size: 2rem;
 }
 .section-footer img{
-	width: 64px;
-	height: 64px;
+	width: 42px;
+	height: 42px;
 }
-
+.section-footer .sub-title{
+	font-size: 1.2rem;
+}
 
 /*			RESPONSIVIDADES			*/
 @media only screen and (max-width: 250px) {
